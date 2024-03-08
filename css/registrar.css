@@ -1,0 +1,170 @@
+/***************************************** REGISTRAR STYLES *************************************************** */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Atributos del body, fondo del login y tipo de letra */
+
+body {
+   
+    background-color: #13a981;
+    background-image: url('../img/o.jpg');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: sans-serif;
+}
+
+
+/* Atributos del div "login" que contiene todos los elementos */
+
+.login {
+    width: 40%;
+    height: 100%;
+    margin: auto;
+    background: transparent;
+    border: 2px solid rgba(red, green, blue, alpha);
+    border-radius: 10px;
+    display: block;
+}
+
+
+/* Atributos del div "titulo" que contiene el titulo de la página */
+
+.titulo {
+    background:rgba(rgb(237, 234, 234), rgb(235, 239, 235), rgb(231, 231, 237), alpha);
+    border-radius: 10px;
+    color: black;
+    width: 40%;
+    margin: auto;
+    margin-top: 8%;
+    display: block;
+  
+}
+
+
+/* Atributos de los títulos tipo "h1" */
+
+h1 {
+    text-align: center;
+    font-size: 35px;
+}
+
+
+/* Atributos del formulario */
+
+form {
+    color: black;
+    height: auto;
+    width: 80%;
+    margin: auto;
+    padding: 10px;
+    display: block;
+}
+
+
+/* Atributos de los enlaces del formulario */
+
+form a {
+    text-decoration: none;
+    color: blue;
+}
+
+
+/* Atributos cuando se de click a los enlaces */
+
+form a:active {
+    color: darkblue;
+}
+
+
+/* Atributos de los elementos tipo "input" y "button" del formulario */
+
+input,
+button {
+    margin-bottom: 3px;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 2px solid #d1d1d1;
+}
+
+
+/* Atributos del botón del formulario */
+
+button[type="submit"] {
+    background: #001127;
+    color: #fff;
+    border: none;
+    margin-bottom: 20px;
+}
+
+
+/* Atributos cuando el cursor esté encima del botón del formulario */
+
+button[type="submit"]:hover {
+    cursor: pointer;
+    background: #001b41;
+}
+
+
+/* Atributos cuando se de click al botón del formulario */
+
+button[type="submit"]:active {
+    background: #000c1c;
+}
+
+
+/* Atributos del div "alert-fail" que contiene un mensaje de error en el formulario */
+
+.login .alert-fail {
+    width: 70%;
+    margin: auto;
+    display: block;
+}
+
+
+/* Atributos del mensaje de error del formulario */
+
+.login .alert-fail .button-fail {
+    background: #ff3e3e;
+    margin-top: 20px;
+    color: white;
+    border: 2px solid #f03d3d;
+    border-radius: 5px;
+}
+
+
+/* Atributos del div "alert-success" que contiene un mensaje de éxito en el formulario */
+
+.login .alert-success {
+    width: 70%;
+    margin: auto;
+    display: block;
+}
+
+
+/* Atributos del mensaje de éxito del formulario */
+
+.login .alert-success .button-success {
+    background: #00c117;
+    margin-top: 20px;
+    color: white;
+    border: 2px solid #00b015;
+    border-radius: 5px;
+}
+p{
+    background:rgba(rgb(237, 234, 234), rgb(235, 239, 235), rgb(231, 231, 237), alpha);
+    border-radius: 10px;
+    color: black;
+    width: 40%;
+    margin: auto;
+    margin-top: 8%;
+    display: block;
+}

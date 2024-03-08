@@ -1,0 +1,122 @@
+/***************************************** LOGIN STYLES *************************************************** */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Atributos del body, fondo del login y tipo de letra */
+
+body {
+    background-color: #13a981;
+    background-image: url('../img/u.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: sans-serif;
+}
+
+
+/* Atributos del div "login" que contiene todos los elementos */
+
+.login {
+    width: 45%;
+    height: 100%;
+    margin: auto;
+    background: rgb(151, 162, 253);
+    display: block;
+}
+
+
+/* Atributos del div "titulo" que contiene el titulo de la página */
+
+.titulo {
+    background: rgb(85, 100, 241);
+    color: rgb(250, 249, 249);
+    width: 45%;
+    height: 100%;
+    margin: auto;
+    margin-top: 8%;
+    display: block;
+}
+
+
+/* Atributos de los títulos tipo "h1" */
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+
+/* Atributos del formulario */
+
+form {
+    color: black;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    display: block;
+}
+
+
+/* Atributos de los enlaces del formulario */
+
+form a {
+    text-decoration: none;
+    color: blue;
+}
+
+
+/* Atributos cuando se de click a los enlaces */
+
+form a:active {
+    color: darkblue;
+}
+
+
+/* Atributos de las estiquetas */
+
+label {
+    margin-top: 30px;
+}
+
+
+/* Atributos de los elementos tipo "input" de formulario */
+
+input {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 2px solid #d1d1d1;
+}
+
+
+/* Atributos del botón del formulario */
+
+input[type="submit"] {
+    background: #2706e6;
+    color: #fff;
+    border: none;
+    margin-bottom: 20px;
+}
+
+
+/* Atributos cuando el cursor esté encima del botón del formulario */
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background: #001b41;
+}
+
+
+/* Atributos cuando se de click al botón del formulario */
+
+input[type="submit"]:active {
+    background: #000c1c;
+}
