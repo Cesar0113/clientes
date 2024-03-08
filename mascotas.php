@@ -42,11 +42,9 @@ if(!isset($_SESSION['usuario']))
         <div class="formInfo">
             <form action="acciones.php" method="POST" id="form">
                 <div class="textboxes">
-                <input type="text" placeholder="Primer Nombre" id="nombre1" name="nombre1" value=""  >
-                <input type="text" placeholder="Segundo Nombre" id="nombre2" name="nombre2" value="" ><br /><br />
-                <input type="text" placeholder="Primer Apellido" id="apellido1" name="apellido1" value=""   >
-                <input type="text" placeholder="Segundo Apellido" id="apellido2"  name="apellido2"  value="" ><br /><br />
-                <input type="text" placeholder="Direccion" id="direccion" name="direccion" value=""  >
+                <input type="text" placeholder="Nombre de la mascota" id="nombreMascota" name="nombreMascota" value=""  >
+                <input type="number" placeholder="Edad de la mascota" id="edadMascota" name="edadMascota" value="" ><br /><br />
+                <input type="text" placeholder="Tipo de mascota" id="tipoMascota" name="tipoMascota" value=""   >
                 <input style="display:none; opacity: 60%;" type="number" placeholder="ID" id="idtext" name="idtext" value="" readonly >
                 </div>
 
@@ -65,39 +63,31 @@ if(!isset($_SESSION['usuario']))
 
                 <?php
 
-                $sql = mysqli_query($conn, "SELECT * FROM tblcliente ORDER BY idCliente");
+                $sql = mysqli_query($conn, "SELECT * FROM tblmascota ORDER BY idMascota");
                 ?>
                 <table id="table">
                 <tr>
                     <th></th>
                     <th>Id</th>
-                    <th> Nombre</th>
+                    <th>Nombre</th>
                     <th>Edad</th>
-                    <th>Raza</th>
                     <th>Tipo</th>
-                    <th>Dueño</th>
-                    
                 </tr>
                 <?php
                 while($consulta = mysqli_fetch_array($sql)){
                 ?>
-                <tr>
-                    <td><input class="checkbox" type="checkbox" /></td>
-                    <td class="idcliente"><?php echo  $consulta['idCliente'];?></td>
-                    <td class="nombre"><?php echo  $consulta['nombre'];?></td>
-                    <td class="edad"><?php echo  $consulta['edad'];?></td>
-                    <td class="raza"><?php echo  $consulta['raza'];?></td>
-                    <td class="tipo"><?php echo  $consulta['tipo'];?></td>
-                    <td class="dueño"><?php echo  $consulta['dueño'];?></td>
-                    <td class="tipo"><?php echo  $consulta['tipo'];?></td>
-                    <td class="dueño"><?php echo  $consulta['dueño'];?></td>
-                    
-                </tr>
-                <?php } ?>
-                </table>
-            </div>
+          <tr>
+        <td><input class="checkbox" type="checkbox" /></td>
+        <td class="idMascota"><?php echo  $consulta['idMascota'];?></td>
+        <td class="nombreMascota"><?php echo  $consulta['nombreMascota'];?></td>
+        <td class="edadMascota"><?php echo  $consulta['edadMascota'];?></td>
+        <td class="tipoMascota"><?php echo  $consulta['tipoMascota'];?></td>
+    </tr>
+    <?php } ?>
+    </table>
+</div>
 
-    </div>
+</div>
 
 </body>
 

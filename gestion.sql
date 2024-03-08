@@ -143,3 +143,27 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- Estructura de tabla para la tabla `tblmascota`
+CREATE TABLE `tblmascota` (
+  `idMascota` int(11) NOT NULL,
+  `nombreMascota` varchar(20) NOT NULL,
+  `edadMascota` int(11) NOT NULL,
+  `tipoMascota` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Volcado de datos para la tabla `tblmascota`
+INSERT INTO `tblmascota` (`idMascota`, `nombreMascota`, `edadMascota`, `tipoMascota`) VALUES
+(1, 'Firulais', 3, 'Perro'),
+(2, 'Michi', 2, 'Gato');
+
+-- Índices para tablas volcadas
+-- Indices de la tabla `tblmascota`
+ALTER TABLE `tblmascota`
+  ADD PRIMARY KEY (`idMascota`);
+
+-- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT de la tabla `tblmascota`
+ALTER TABLE `tblmascota`
+  MODIFY `idMascota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;

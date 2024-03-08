@@ -28,10 +28,9 @@ if(!isset($_SESSION['usuario']))
       </div>
       <ul>
         <li><a href="menu.php">Menu</a></li>
-        <li><a href="admin.php">Gestion Clientes</a></li>
-        <li><a href="mascotas.php">Gestion Mascotas</a></li> 
-        <li><a href="razas.php">Gestion Razas</a></li>
-        <li><a href="informe.php">Gestion Informe </a></li>
+        <li><a href="admin.php">Clientes</a></li>
+        <li><a href="mascotas.php"> Mascotas</a></li> 
+        <li><a href="informe.php">Ventas</a></li>
         <li><a href="index.php">Salir</a></li>
         
     </div>
