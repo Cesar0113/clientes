@@ -1,0 +1,103 @@
+/* mascotas.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: -40px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    max-width: 74%; /* Ajusta el tamaño máximo al ancho de la pantalla */
+    height: 10%;
+    margin: 0 auto; /* Centra el encabezado */
+}
+/* Este estilo es para el contenedor del select y la etiqueta */
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Estilo para el select */
+select {
+    padding: 8px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Estilo para las opciones del select */
+select option {
+    padding: 8px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+.textboxes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.textboxes input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    box-sizing: border-box;
+}
+
+.buttons button {
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.buttons button[type="submit"] {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+}
+
+.buttons button[type="button"] {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+}
+
+.tableContainer {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #3498db;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #3498db;
+    color: #fff;
+}

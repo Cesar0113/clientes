@@ -5,6 +5,6 @@ unset($_SESSION['usuario']);
 
 session_destroy();
 
-header("Location: index.php");
+header("Location: ../login/login.php");
 
 ?>

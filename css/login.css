@@ -6,6 +6,7 @@ body {
     background-image: url('../img/pets.jpg'); 
 }
 
+
 .titulo {
     text-align: center;
     padding: 20px;
@@ -38,17 +39,10 @@ input {
     border-radius: 3px;
 }
 
-button {
+input[type="submit"] {
     background-color: #333;
     color: #fff;
     cursor: pointer;
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-}
-
-button:hover {
-    background-color: #555;
 }
 
 a {
@@ -60,33 +54,7 @@ a:hover {
     text-decoration: underline;
 }
 
-.alert-fail, .alert-success {
-    display: none;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 3px;
-}
-
-.alert-fail {
-    background-color: #ffcccc;
-    color: #cc0000;
-}
-
-.alert-success {
-    background-color: #d4edda;
-    color: #155724;
-}
-
-.button-fail {
-    background-color: #cc0000;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-.button-success {
-    background-color: #28a745;
-    color: #fff;
-    border: none;
-    cursor: pointer;
+p {
+    color: red;
+    margin-top: 10px;
 }

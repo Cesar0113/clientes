@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: -40px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    max-width: 74%; /* Ajusta el tamaño máximo al ancho de la pantalla */
+    height: 10%;
+    margin: 0 auto; /* Centra el encabezado */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formInfo {
+    width: 70%;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.textboxes {
+    display: flex;
+    flex-direction: column;
+}
+
+.textboxes input {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.buttons button {
+    padding: 12px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+.buttons button:hover {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.tableContainer {
+    width: 70%;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+#table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#table th, #table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.fila-seleccionada {
+    background-color: #f5f5f5;
+}
+
+.checkbox {
+    cursor: pointer;
+}
+
