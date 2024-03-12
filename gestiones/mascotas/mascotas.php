@@ -16,7 +16,7 @@ if (!isset($_SESSION['usuario'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gestión de Mascotas</title>
     <link rel="stylesheet" type="text/css" href="../../css/mascota.css">
-    <link rel="stylesheet" type="text/css" href="../../css/dashboards.css">
+    <link rel="stylesheet" type="text/css" href="../../css/dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
 </head>
@@ -28,7 +28,6 @@ if (!isset($_SESSION['usuario'])) {
     <a href="../clientes/clientes.php"><i class="fas fa-user"></i> Clientes</a>
     <a href="mascotas.php"><i class="fas fa-dog"></i> Mascotas</a>
     <a href="../productos/productos.php"><i class="fas fa-box-open"></i> Productos</a>
-    <a href="#"><i class="fas fa-chart-line"></i> Informe de Ventas</a>
     <a class="logout" href="../../dashboard.php"><i class="fas fa-sign-out-alt"></i>Atras</a>
 </div>
     <header>

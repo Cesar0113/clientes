@@ -16,7 +16,7 @@ if (!isset($_SESSION['usuario'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Productos para Mascotas</title>
     <link rel="stylesheet" type="text/css" href="../../css/productos.css">
-    <link rel="stylesheet" type="text/css" href="../../css/dashboards.css">
+    <link rel="stylesheet" type="text/css" href="../../css/dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -28,13 +28,12 @@ if (!isset($_SESSION['usuario'])) {
     <a href="../clientes/clientes.php"><i class="fas fa-user"></i> Clientes</a>
     <a href="../mascotas/mascotas.php"><i class="fas fa-dog"></i> Mascotas</a>
     <a href="#"><i class="fas fa-box-open"></i> Productos</a>
-    <a href="#"><i class="fas fa-chart-line"></i> Informe de Ventas</a>
     <a class="logout" href="../../dashboard.php"><i class="fas fa-sign-out-alt"></i>Atras</a>
 </div>
     <header>
         <h1>Productos para Mascotas</h1>
     </header>
-
+ 
     <div class="container">
     <?php
     $productos = mysqli_query($conn, "SELECT * FROM tblproducto");
@@ -50,8 +49,6 @@ if (!isset($_SESSION['usuario'])) {
     <?php }
     ?>
 </div>
-
-
     <div class="acciones-producto">
     <button class="btn-agregar" onclick="document.getElementById('agregarProductoModal').style.display='block'"> <i class="fas fa-plus"></i> Agregar Producto</button>
     <button type="button" id="btn-editar" disabled onclick="editarProducto('editarProductoModal')"><i class="fas fa-edit"></i> Editar</button>
@@ -98,3 +95,4 @@ if (!isset($_SESSION['usuario'])) {
         window.location.href = "../compras/compras.php?idProducto=" + idProducto;
     }
 </script>
+

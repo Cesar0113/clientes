@@ -40,13 +40,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
                 // Enviar correo electrónico con PHPMailer
                 enviarCorreoCompra($idProducto, $idCliente, $cantidad, $precioTotal, $tipoPago);
+            // Mostrar mensaje
+       // Redirigir al usuario a la página de productos después de unos segundos
+                 header("Refresh: 15; URL=../productos/productos.php");
             } else {
                 // Error: Imprime el mensaje de error.
                 echo '<div class="alert alert-error">Error al realizar la compra: ' . mysqli_error($conn) . '</div>';
             }
+            
         } else {
             echo "Datos incompletos para realizar la compra.";
         }
+        
     }
 }
 
@@ -106,15 +111,15 @@ $clientes = mysqli_query($conn, "SELECT * FROM tblcliente");
     </select>
     <a href="../productos/productos.php" class="btn-atras"><i class="fas fa-arrow-left"></i>Cancelar Compra</a>
     <button type="submit" name="btnRealizarCompra">Realizar Compra</button>
-
-
-</form>
-<?php
+    <?php
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // ... Lógica de procesamiento y alertas ...
                 echo '<div class="alert alert-success">Compra realizada con éxito. Mira tu correo!!</div>';
             }
         ?>
+
+</form>
+
    </div>
 </body>
 </html>
@@ -170,9 +175,61 @@ $mail->Body = "
 ";
         // Enviar correo
         $mail->send();
-     
+        // Generar y descargar el PDF
+        generarPDF($infoProducto, $infoCliente, $cantidad, $precioTotal, $tipoPago);
+
     } catch (Exception $e) {
         echo "Error al enviar el correo: {$mail->ErrorInfo}";
     }
 }
+function generarPDF($infoProducto, $infoCliente, $cantidad, $precioTotal, $tipoPago) {
+    require_once('../../tcpdf/tcpdf.php');
+
+    // Crear nuevo documento PDF
+    $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
+
+    // Establecer información del documento
+    $pdf->SetCreator(PDF_CREATOR);
+    $pdf->SetAuthor('Mascotas & Alimentación');
+    $pdf->SetTitle('Detalle de Compra');
+    $pdf->SetSubject('Detalle de Compra');
+    $pdf->SetKeywords('Compra, Producto, Cliente');
+
+    // Agregar una página
+    $pdf->AddPage();
+
+    // Establecer el título
+    $pdf->SetFont('helvetica', 'B', 20);
+    $pdf->Cell(0, 10, 'Mascotas & Alimentos', 0, 1, 'C');
+    $pdf->Ln(10);
+
+    // Agregar la imagen del producto
+    $imagenPath = "../productos/" . $infoProducto['imagen'];
+    $pdf->Image($imagenPath, 50, 30, 50, 50, 'JPEG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+
+    // Crear el contenido del PDF
+    $html = "
+        <h2>Detalle de la Compra</h2>
+        <p><strong>Producto:</strong> {$infoProducto['nombre']}</p>
+        <p><strong>Cliente:</strong> {$infoCliente['nombre1']} {$infoCliente['apellido1']}</p>
+        <p><strong>Cantidad:</strong> $cantidad</p>
+        <p><strong>Precio Total:</strong> $$precioTotal</p>
+        <p><strong>Tipo de Pago:</strong> $tipoPago</p>
+    ";
+
+    // Agregar el contenido al PDF
+    $pdf->SetFont('helvetica', '', 12);
+    $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
+
+    // Establecer el borde del contenido
+    $pdf->lastPage();
+    $pdf->Rect(10, 10, 190, 260);
+    // Finalizar el documento y generar el PDF
+    $pdf->Output(__DIR__ . 'detalle_compra.pdf', 'D');
+
+    // Enviar el PDF al navegador para su descarg
+}   
+
+// Script JavaScript para descargar el PDF después de unos segundos
+
 ?>

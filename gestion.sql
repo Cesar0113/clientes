@@ -76,6 +76,7 @@
     `password` varchar(10) NOT NULL,
     `idPerfil` int(11) NOT NULL
     `correo` VARCHAR(50) NOT NULL;
+    `codigo_recuperacion` VARCHAR(255) NOT NULL
   ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
   --
@@ -184,3 +185,17 @@ CREATE TABLE `tblproducto` (
     `imagen` VARCHAR(255) NOT NULL,
     PRIMARY KEY (`idProducto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Añade una nueva tabla para las compras
+CREATE TABLE `tblcompra` (
+    `idCompra` int(11) NOT NULL AUTO_INCREMENT,
+    `idProducto` int(11) NOT NULL,
+    `idCliente` int(11) NOT NULL,
+    `precio` decimal(10, 2) NOT NULL,
+    PRIMARY KEY (`idCompra`),
+    FOREIGN KEY (`idProducto`) REFERENCES `tblproducto` (`idProducto`),
+    FOREIGN KEY (`idCliente`) REFERENCES `tblcliente` (`idCliente`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  -- Añade una nueva columna para la cantidad en la tabla tblcompra
+ALTER TABLE `tblcompra` ADD `cantidad` int(11) NOT NULL AFTER `precio`;
+ALTER TABLE tblcompra ADD tipoPago VARCHAR(10) NOT NULL AFTER precio;

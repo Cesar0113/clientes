@@ -41,7 +41,10 @@ if (isset($_POST['btncrear'])) {
         $insertar = mysqli_query($conn, "INSERT INTO tblmascota (nombreMascota, edadMascota, tipoMascota, raza_id, idCliente) VALUES ('$nombreMascota', '$edadMascota', '$tipoMascota', '$idRaza', '$cliente')");
 
         if ($insertar) {
-            echo "Mascota creada correctamente.";
+            echo '<script>
+            alert("Mascota creada correctamente");
+            window.location.href = "mascotas.php"; // Redirige a la página deseada después de la alerta
+          </script>';
         } else {
             echo "Error al crear la mascota.";
         }
@@ -60,7 +63,10 @@ if (isset($_POST['btncrear'])) {
         $consulta_eliminar = mysqli_query($conn, "DELETE FROM tblmascota WHERE idMascota = '$idMascotaEliminar'");
 
         if ($consulta_eliminar) {
-            echo "Mascota eliminada correctamente.";
+            echo '<script>
+            alert("Mascota eliminada correctamente");
+            window.location.href = "mascotas.php"; // Redirige a la página deseada después de la alerta
+          </script>';
 
             // Ahora, verifica si la raza ya no está siendo utilizada por otras mascotas
             $raza_id_eliminar = $info_mascota['raza_id'];
@@ -70,7 +76,10 @@ if (isset($_POST['btncrear'])) {
                 // No hay otras mascotas usando esta raza, se puede eliminar
                 $consulta_eliminar_raza = mysqli_query($conn, "DELETE FROM tblraza WHERE idRaza = '$raza_id_eliminar'");
                 if ($consulta_eliminar_raza) {
-                    echo "Raza eliminada correctamente.";
+                    echo '<script>
+                    alert("Raza eliminada correctamente");
+                    window.location.href = "mascotas.php"; // Redirige a la página deseada después de la alerta
+                  </script>';
                 } else {
                     echo "Error al eliminar la raza.";
                 }
@@ -114,7 +123,11 @@ if (isset($_POST['btncrear'])) {
         $actualizar = mysqli_query($conn, "UPDATE tblmascota SET nombreMascota = '$nombreMascota', edadMascota = '$edadMascota', tipoMascota = '$tipoMascota', raza_id = '$idRaza', idCliente = '$cliente' WHERE idMascota = '$id'");
 
         if ($actualizar) {
-            echo "Mascota modificada correctamente.";
+            echo '<script>
+            alert("Mascota modificada correctamente");
+            window.location.href = "mascotas.php"; // Redirige a la página deseada después de la alerta
+          </script>';
+
         } else {
             echo "Error al modificar la mascota.";
         }

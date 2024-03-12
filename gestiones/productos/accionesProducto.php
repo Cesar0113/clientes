@@ -28,7 +28,10 @@ if (isset($_POST['btnAgregarProducto'])) {
 
             if ($insertarProducto) {
                 $idProductoInsertado = mysqli_insert_id($conn);
-                echo "success|Producto agregado correctamente. ID del nuevo producto: " . $idProductoInsertado;
+                echo '<script>
+                alert("¡Venta realizada! Producto agregado correctamente.");
+                window.location.href = "productos.php"; // Redirige a la página deseada después de la alerta
+               </script>'. $idProductoInsertado;
             } else {
                 echo "error|Error al agregar el producto: " . mysqli_error($conn);
             }
@@ -59,7 +62,10 @@ if (isset($_POST['btnAgregarProducto'])) {
                 $actualizarProducto = mysqli_query($conn, "UPDATE tblproducto SET nombre = '$nombreProducto', precio = '$precioProducto', descripcion = '$descripcionProducto', imagen = '$rutaImagen' WHERE idProducto = $idProducto");
 
                 if ($actualizarProducto) {
-                    echo "success|Producto actualizado correctamente.";
+                    echo '<script>
+                    alert("¡Venta realizada! Producto editado correctamente.");
+                    window.location.href = "productos.php"; // Redirige a la página deseada después de la alerta
+                  </script>';
                 } else {
                     echo "error|Error al actualizar el producto: " . mysqli_error($conn);
                 }
@@ -85,7 +91,10 @@ if (isset($_POST['btnAgregarProducto'])) {
     $eliminarProducto = mysqli_query($conn, "DELETE FROM tblproducto WHERE idProducto = $idProducto");
 
     if ($eliminarProducto) {
-        echo "success|Producto eliminado correctamente.";
+   echo '<script>
+                alert("¡Venta realizada! Producto eliminado correctamente.");
+                window.location.href = "productos.php"; // Redirige a la página deseada después de la alerta
+              </script>';
     } else {
         echo "error|Error al eliminar el producto: " . mysqli_error($conn);
     }
