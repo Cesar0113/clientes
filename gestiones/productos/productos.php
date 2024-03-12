@@ -7,6 +7,19 @@ error_reporting(E_ERROR | E_PARSE | E_NOTICE);
 if (!isset($_SESSION['usuario'])) {
     header("Location: ../../inicio.php");
 }
+if (isset($_GET['q'])) {
+    // Escapa el término de búsqueda para evitar inyecciones SQL
+    $busqueda = mysqli_real_escape_string($conn, $_GET['q']);
+
+    // Realiza la consulta SQL para buscar productos que coincidan con el término de búsqueda
+    $productos = mysqli_query($conn, "SELECT * FROM tblproducto WHERE nombre LIKE '%$busqueda%'");
+
+    // Resto del código para mostrar los resultados de la búsqueda
+} else {
+    // Si no se ha enviado un término de búsqueda, muestra todos los productos
+    $productos = mysqli_query($conn, "SELECT * FROM tblproducto");
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -32,6 +45,10 @@ if (!isset($_SESSION['usuario'])) {
 </div>
     <header>
         <h1>Productos para Mascotas</h1>
+        <form action="" method="GET">
+        <input type="text" name="q" placeholder="Buscar por nombre">
+        <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
     </header>
  
     <div class="container">

@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (idClienteEliminar !== null) {
             var confirmacion = confirm("¿Estás seguro de que deseas eliminar este cliente?");
             if (confirmacion) {
-                eliminarCliente(idClienteEliminar);
+                eliminarCliente(idClienteEliminar); 
             }
         } else {
             alert("Por favor selecciona un cliente para eliminar.");

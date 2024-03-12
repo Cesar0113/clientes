@@ -22,7 +22,10 @@ if (isset($_POST['btncrear'])) {
         $insertar = mysqli_query($conn, "INSERT INTO tblcliente (nombre1, nombre2, apellido1, apellido2, direccion, movil, email) VALUES ('$nombre1', '$nombre2', '$apellido1', '$apellido2', '$direccion', '$movil', '$email')");
         
         if ($insertar) {
-            echo "Cliente creado correctamente.";
+            echo '<script>
+            alert("¡Cliente agregado correctamente.");
+            window.location.href = "clientes.php"; // Redirige a la página deseada después de la alerta
+          </script>';
         } else {
             echo "Error al crear el cliente.";
         }
